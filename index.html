@@ -536,9 +536,143 @@
             .ea-tool-name { font-size: var(--fs-xl); }
             .ea-footer-row { flex-direction: column; text-align: center; }
         }
-    </style>
+    
+        /* ============ LUMOSHIP NAVIGATION ============ */
+        .lumoship-nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 23, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+        }
+        
+        .lumoship-nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .lumoship-nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 0.6rem;
+            transition: opacity 0.2s;
+        }
+        
+        .lumoship-nav-logo:hover {
+            opacity: 0.85;
+        }
+        
+        .lumoship-nav-logo-mark {
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, var(--accent), #06b6d4);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            box-shadow: 0 0 16px rgba(59, 130, 246, 0.3);
+        }
+        
+        .lumoship-nav-logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.08em;
+        }
+        
+        .lumoship-nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .lumoship-nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .lumoship-nav-link:hover {
+            color: var(--text-primary);
+        }
+        
+        .lumoship-nav-link.back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .lumoship-nav-link.back-link:hover {
+            background: var(--bg-secondary);
+            border-color: var(--border-accent);
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .lumoship-nav {
+                padding: 0.75rem 1rem;
+            }
+            
+            .lumoship-nav-links {
+                gap: 0.75rem;
+            }
+            
+            .lumoship-nav-link:not(.back-link) {
+                display: none;
+            }
+            
+            .lumoship-nav-link.back-link {
+                padding: 0.35rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+</style>
 </head>
 <body>
+
+    <!-- ========== LUMOSHIP NAVIGATION ========== -->
+    <nav class="lumoship-nav">
+        <div class="lumoship-nav-inner">
+            <a href="https://lumoship.org" class="lumoship-nav-logo">
+                <div class="lumoship-nav-logo-mark">L</div>
+                <span class="lumoship-nav-logo-text">LUMOSHIP</span>
+            </a>
+            <div class="lumoship-nav-links">
+                <a href="https://lumoship.org#products" class="lumoship-nav-link">Products</a>
+                <a href="https://lumoship.org#contact" class="lumoship-nav-link">Contact</a>
+                <a href="https://lumoship.org" class="lumoship-nav-link back-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Lumoship
+                </a>
+            </div>
+        </div>
+    </nav>
+
 
     <!-- ========== HEADER ========== -->
     <header class="ea-header">
